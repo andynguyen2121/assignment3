@@ -92,6 +92,8 @@ int main()
     //         then read and echo the full line.
     //         (Note on putback(): describe one use case in a comment.)
 
+
+    
     // putback use case - Grabbing strings one by one and accidently taking one part of the next string, use putback to undo and continue from there
 
     string text;
@@ -121,6 +123,7 @@ int main()
     cin >> num;
 
     cin.ignore(100, '\n');
+    
     cout << "Type a long line of text: ";
     getline(cin, line);
 
@@ -142,4 +145,28 @@ int main()
     }
  
     return 0;
+
+    /* part 2 output input test 1
+
+    Type a line of text: hi
+    First character is a letter.
+    Enter a number: 1
+    Type a long line of text: hello world
+    Number: 1
+    Long line of text: hello world
+    Type another number: a
+    Not a valid input!
+
+    part 2 output input test 2
+
+    Type a line of text: hi 2
+    First character is a letter.
+    Enter a number: 2
+    Type a long line of text: hello world 2
+    Number: 2
+    Long line of text: hello world 2
+    Type another number: 2
+    You entered: 2
+
+    */
 }
