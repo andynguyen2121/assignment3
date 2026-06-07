@@ -66,6 +66,23 @@ int main()
     // TODO G: close both files
     inFile.close();
     outFile.close();
+
+    /*
+    payrollData.txt input:
+
+    Giselle Robinson Accounting
+    5600 5 30
+    450 9
+
+    payrollReport.txt results:
+
+    Name:  Giselle Robinson, Department:  Accounting
+    Monthly Gross Paycheck: $5600.00, Bonus: 5.00%, Taxes: 30.00%
+    Paycheck: $4200.00
+    Distance Traveled: 450.00 miles, Travel Time: 9.00 hours
+    Average Speed: 50.00 miles per hour
+
+    */
  
  
     // ---------- PART 2: STREAM INSPECTOR ----------
@@ -74,14 +91,53 @@ int main()
     // TODO H: peek at the first character, report digit vs letter,
     //         then read and echo the full line.
     //         (Note on putback(): describe one use case in a comment.)
- 
- 
+
+    // putback use case - Look ahead to make sure there is no error, double checking to see if operation is safe and putback when done
+
+    string text;
+    cout << "Type a line of text: ";
+
+    char firstChar = cin.peek();
+
+    if (isdigit(firstChar)) {
+        cout << "First character is a digit." << endl;
+    }
+    else if (isalpha(firstChar)) {
+        cout << "First character is a letter." << endl;
+    }
+    else {
+        cout << "Neither a digit or letter." << endl;
+    }
+
+    cin.ignore(100, '\n');
+
     // TODO I: read an int, use cin.ignore(), then getline a description.
- 
+    int num;
+    string line;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    cin.ignore(100, '\n');
+    cout << "Type a long line of text: ";
+    getline(cin, line);
+
+    cout << "Number: " << num << endl << "Long line of text: " << line << endl;
  
     // TODO J: prompt for a number; if cin.fail(), clear and ignore,
     //         then report invalid input.
- 
+    int num2;
+    cout << "Type another number: ";
+    cin >> num2;
+
+    if (cin.fail()) {
+        cout << "Not a valid input!" << endl;
+        cin.clear();
+        cin.ignore(100, '\n');
+    }
+    else {
+        cout << "You entered: " << num2 << endl;
+    }
  
     return 0;
 }
