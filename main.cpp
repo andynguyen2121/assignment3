@@ -92,13 +92,15 @@ int main()
     //         then read and echo the full line.
     //         (Note on putback(): describe one use case in a comment.)
 
-    // putback use case - Look ahead to make sure there is no error, double checking to see if operation is safe and putback when done
+    // putback use case - Grabbing strings one by one and accidently taking one part of the next string, use putback to undo and continue from there
 
     string text;
     cout << "Type a line of text: ";
 
     char firstChar = cin.peek();
 
+    // found c++ functions for telling if a character is a digit or letter
+    
     if (isdigit(firstChar)) {
         cout << "First character is a digit." << endl;
     }
