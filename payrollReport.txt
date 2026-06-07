@@ -1,0 +1,5 @@
+Name:  Giselle Robinson, Department:  Accounting
+Monthly Gross Paycheck: $5600.00, Bonus: 5.00%, Taxes: 30.00%
+Paycheck: $4200.00
+Distance Traveled: 450.00 miles, Travel Time: 9.00 hours
+Average Speed: 50.00 miles per hour
