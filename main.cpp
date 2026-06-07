@@ -99,7 +99,7 @@ int main()
 
     char firstChar = cin.peek();
 
-    // found c++ functions for telling if a character is a digit or letter
+    // found c++ functions for checking if a character is a digit or letter
     
     if (isdigit(firstChar)) {
         cout << "First character is a digit." << endl;
